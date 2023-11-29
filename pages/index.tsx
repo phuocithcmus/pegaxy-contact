@@ -90,8 +90,8 @@ const Contact: React.FC<AssetPageProps> = () => {
                   <div style={{ paddingLeft: "20%" }}>
                     <div style={{ width: "100%" }}>
                       <h3 className="mt-3 mb-3">
-                        If you wish to to delete your game account, please send
-                        us an email as template below:
+                        If you wish to delete your game account, please send us
+                        an email as template below:
                       </h3>
                       <div>
                         <p
