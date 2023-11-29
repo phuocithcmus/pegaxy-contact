@@ -1,0 +1,228 @@
+//
+// Base styles
+//
+.accordion {
+	width: 100%;
+	&.blockAccordion {
+		.accordion-header {
+		}
+		.accordion-item {
+			margin-bottom: 5px;
+		}
+		.accordion-button {
+			position: relative;
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+			padding: 8px 10px;
+			font-size: 16px;
+			color: #fff;
+			text-align: left; // Reset button style
+			background-color: rgba(#1c5198, 1);
+			border: 2px rgba(#418cf0, 0.65) solid;
+			@include border-radius(5px);
+			overflow-anchor: none;
+			@include transition($accordion2-transition);
+			font-weight: 600;
+			box-shadow: none;
+			&:not(.collapsed) {
+				color: #fff;
+				background-color: rgba(#1c5198, 0.35);
+				border: 2px rgba(#fff, 0.15) solid;
+				box-shadow: none;
+				border-radius: 5px;
+				&::after {
+					// background-image: escape-svg($accordion2-button-icon);
+					background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/accordion_down.svg');
+					transform: rotate(0deg);
+				}
+			}
+			// Accordion icon
+			&::after {
+				flex-shrink: 0;
+				width: 19px;
+				height: 9px;
+				margin-left: auto;
+				content: '';
+				background-image: escape-svg($accordion2-button-active-icon);
+				// background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/accordion_up.svg');
+				background-repeat: no-repeat;
+				background-size: 100%;
+				@include transition($accordion2-icon-transition);
+			}
+			&:hover {
+				z-index: 2;
+			}
+			&:focus {
+				z-index: 3;
+				outline: 0;
+				box-shadow: none;
+			}
+			.title {
+				font-size: 15px;
+				font-weight: bold;
+				margin-left: 10px;
+				color: #fff;
+			}
+			.badge {
+				position: absolute;
+				right: 48px;
+				background-color: #79fcf3;
+				height: 18px;
+				min-width: 18px;
+				line-height: 18px;
+				border-radius: 9px;
+				text-align: center;
+				color: #000;
+				font-weight: normal;
+				padding: 0;
+				font-size: 13px;
+			}
+		}
+		.accordion-body {
+			position: relative;
+		}
+	}
+}
+
+.accordion-button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	padding: 10px 10px 10px 0px;
+	@include font-size($font-size-base);
+	// color: $accordion-button-color;
+	color: #fff;
+	text-align: left; // Reset button style
+	background-color: transparent;
+	border-width: 0;
+	@include border-radius(0);
+	overflow-anchor: none;
+	@include transition($accordion-transition);
+	font-weight: normal;
+	box-shadow: none;
+	margin: 0;
+	.fa-solid {
+	}
+	&:not(.collapsed) {
+		color: #7f89a7;
+		background-color: transparent;
+		box-shadow: none;
+		&::after {
+			background-image: url('https://cdn.pegaxy.io/statics/play/public/v5/images/accordion_up.svg');
+			// background-image: escape-svg($accordion-button-icon);
+			transform: $accordion-icon-transform;
+		}
+	}
+	// Accordion icon
+	&::after {
+		flex-shrink: 0;
+		width: 0.75rem;
+		height: 0.75rem;
+		margin-left: auto;
+		content: '';
+		background-image: url('https://cdn.pegaxy.io/statics/play/public/v5/images/accordion_up.svg');
+
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		@include transition($accordion-icon-transition);
+	}
+	&:hover {
+		z-index: 2;
+	}
+	&:focus {
+		z-index: 3;
+		outline: 0;
+		box-shadow: none;
+	}
+	.title {
+		font-size: 18px;
+		font-weight: normal;
+		color: #7f89a7;
+		text-transform: uppercase;
+	}
+	.badge {
+		position: absolute;
+		right: 48px;
+		background-color: #5ff2fe;
+		height: 18px;
+		min-width: 18px;
+		line-height: 18px;
+		border-radius: 9px;
+		text-align: center;
+		color: #000;
+		font-weight: normal;
+		padding: 0;
+		font-size: 13px;
+		span {
+			position: relative;
+			top: 1px;
+		}
+	}
+}
+
+.accordion-header {
+	margin-bottom: 0;
+}
+
+.accordion-item {
+	// background-color: $accordion-bg;
+	// border: $accordion-border-width solid $accordion-border-color;
+	// &:first-of-type {
+	//     @include border-top-radius($accordion-border-radius);
+	//     .accordion-button {
+	//         @include border-top-radius($accordion-inner-border-radius);
+	//     }
+	// }
+	&:not(:first-of-type) {
+		border-top: 0;
+	}
+	.accordion-collapse {
+		margin-top: 5px;
+	}
+	// Only set a border-radius on the last item if the accordion is collapsed
+	// &:last-of-type {
+	//     @include border-bottom-radius($accordion-border-radius);
+	//     .accordion-button {
+	//         &.collapsed {
+	//             @include border-bottom-radius($accordion-inner-border-radius);
+	//         }
+	//     }
+	//     .accordion-collapse {
+	//         @include border-bottom-radius($accordion-border-radius);
+	//     }
+	// }
+}
+
+.accordion-body {
+	padding: 5px 0;
+	// padding: $accordion-body-padding-y*0.25 $accordion-body-padding-x $accordion-body-padding-y $accordion-body-padding-x;
+}
+
+// Flush accordion items
+//
+// Remove borders and border-radius to keep accordion items edge-to-edge.
+.accordion-flush {
+	.accordion-collapse {
+		border-width: 0;
+	}
+	.accordion-item {
+		border-right: 0;
+		border-left: 0;
+		@include border-radius(0);
+		&:first-child {
+			border-top: 0;
+		}
+		&:last-child {
+			border-bottom: 0;
+		}
+		.accordion-button {
+			@include border-radius(0);
+		}
+	}
+}

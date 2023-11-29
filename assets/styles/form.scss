@@ -1,0 +1,227 @@
+/* Customize the label (the container) */
+
+.form-control::placeholder {
+    color: #8098ab;
+}
+
+.formCheck {
+    display: block;
+    position: relative;
+    padding-left: 32px;
+    margin-left: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 500;
+    color: #2fbced;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    &:hover input~.checkmark {
+        border-color: #2ff5ff;
+    }
+    input:checked~.checkmark {
+        border-color: #2ff5ff;
+        background-color: #2ff5ff;
+    }
+    input:checked~.check-title {
+        color: #fff;
+    }
+    input:checked~.checkmark:after {
+        display: block;
+    }
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border-radius: 5px;
+        background-color: #b10eae;
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 7px;
+            top: 2px;
+            width: 6px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+    .check-title {
+        position: relative;
+        top: 4px;
+    }
+}
+
+.formCheck2 {
+    display: block;
+    position: relative;
+    padding-left: 26px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 500;
+    color: #2fbced;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    &:hover input~.checkmark {
+        border-color: #2fbced;
+    }
+    input:checked~.checkmark {
+        border-color: #2fbced;
+        background-color: #2fbced;
+    }
+    input:checked~.check-title {
+        color: #fff;
+    }
+    input:checked~.checkmark:after {
+        display: block;
+    }
+    .checktitle {
+        position: relative;
+        top: 4px;
+        color: #fff;
+    }
+    .checkbadge {
+        position: absolute;
+        right: -32px;
+        top: -24px;
+    }
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border-radius: 5px;
+        background-color: #3b6ba7;
+        border: 1px #2fbced solid;
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 7px;
+            top: 2px;
+            width: 6px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+    .check-title {
+        position: relative;
+        top: 4px;
+    }
+}
+
+.formRadio {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 500;
+    color: #e9e9ed;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        @include transition($input-transition);
+    }
+    &:hover input~.checkmark {
+        background-color: transparent;
+    }
+    input:checked~.checkmark {
+        border: 2px #77faf2 solid;
+        background-color: #4aafc7;
+    }
+    input:checked~.checkmark:after {
+        display: block;
+    }
+    input:checked~.check-title {
+        color: #fff;
+    }
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border: 2px #ab22ad solid;
+        border-radius: 100%;
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+        }
+    }
+    .check-title {
+        position: relative;
+        top: 4px;
+        font-weight: 300;
+        color: #3a95eb;
+    }
+}
+
+.form-dropdown {
+    display: block;
+    width: 100%;
+    padding: 6px 12px 4px 12px!important;
+    font-family: $input-font-family;
+    @include font-size($input-font-size);
+    font-weight: $input-font-weight;
+    line-height: 24px;
+    color: $input-color;
+    background-color: $input-bg!important;
+    background-clip: padding-box;
+    border: $input-border-width solid $input-border-color;
+    appearance: none; // Fix appearance for date inputs in Safari
+    text-align: left;
+    min-height: 36px;
+    text-decoration: none;
+    &:focus,
+    &:hover {
+        box-shadow: 0 0 0 transparent;
+        color: #fff;
+    }
+    &:after {
+        position: absolute;
+        right: 10px!important;
+        top: 16px!important;
+        border-bottom-color: #fff;
+    }
+}

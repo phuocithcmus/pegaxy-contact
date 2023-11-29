@@ -1,0 +1,55 @@
+@import 'bootstrap/bootstrap.scss';
+@import 'navbar.scss';
+@import 'view.scss';
+@import 'racing.scss';
+@import 'modal.scss';
+@import 'form.scss';
+@import 'sidebar.scss';
+@import 'breeding.scss';
+@import 'fuse.scss';
+@import 'crown.scss';
+@import 'useitem.scss';
+@import 'slider.scss';
+@import 'custom.scss';
+@import 'hainv.scss';
+@import 'keyframes.scss';
+@import 'valentine.scss';
+@import 'viewFoods.scss';
+@import 'viewGears.scss';
+@import 'viewTickets.scss';
+@import 'viewScreen.scss';
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 2px;
+    border-radius: 1px;
+}
+
+::-webkit-scrollbar-corner {
+    height: 2px;
+    border-radius: 1px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background-color: rgba(#ffffff, 0.05);
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(#5a597a, 0.5);
+    // background-color: transparent;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(#5a597a, 1);
+}

@@ -1,0 +1,443 @@
+.viewGears {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .list-pick {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .item-gears {
+            margin-bottom: 12px;
+            width: 25%;
+            padding: 12px;
+            &.active,
+            &:hover {
+                .item-box {
+                    position: relative;
+                    &::after {
+                        position: absolute;
+                        width: 102%;
+                        height: 106%;
+                        left: -2px;
+                        top: -4px;
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/mask-item-active.svg');
+                    }
+                    .item-header {
+                        .info-inner {
+                            .item-info-title {
+                                color: #2fbced;
+                            }
+                            .item-info-meta {
+                                color: #b4b4b4;
+                                font-weight: 300;
+                                span {
+                                    padding: 0 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .item-box {
+                position: relative;
+                &::after {
+                    position: absolute;
+                    width: 102%;
+                    height: 106%;
+                    left: -2px;
+                    top: -4px;
+                    content: '';
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 100% 100%;
+                    cursor: pointer;
+                    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/frame/mask-item.svg');
+                }
+                &.event-100k {
+                    &::before {
+                        position: absolute;
+                        width: 100px;
+                        height: 50px;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        top: -18px;
+                        content: '';
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 100% 100%;
+                        cursor: pointer;
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/frame/mask-100k-top.png');
+                        z-index: 100;
+                    }
+                    &::after {
+                        position: absolute;
+                        width: 102%;
+                        height: 102%;
+                        left: -2px;
+                        top: -2px;
+                        content: '';
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 100% 100%;
+                        cursor: pointer;
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/frame/mask-100k.png');
+                    }
+                }
+                &.tag-time {
+                    &::before {
+                        position: absolute;
+                        width: 30px;
+                        height: 30px;
+                        left: 5px;
+                        margin: 0 auto;
+                        top: 0;
+                        content: '';
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 100% 100%;
+                        cursor: pointer;
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/frame/icon_tag_time.png');
+                        z-index: 100;
+                    }
+                }
+                &.frame-green {
+                    &::after {
+                        position: absolute;
+                        width: 102%;
+                        height: 106%;
+                        left: -2px;
+                        top: -4px;
+                        content: '';
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 100% 100%;
+                        cursor: pointer;
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/frame/frame-green.png');
+                    }
+                }
+                &.frame-blue {
+                    &::after {
+                        position: absolute;
+                        width: 104%;
+                        height: 114%;
+                        left: -5px;
+                        top: -9px;
+                        content: '';
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 100% 100%;
+                        cursor: pointer;
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/frame/frame-blue.png');
+                    }
+                }
+                &.frame-purple {
+                    &::after {
+                        position: absolute;
+                        width: 104%;
+                        height: 114%;
+                        left: -5px;
+                        top: -9px;
+                        content: '';
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 100% 100%;
+                        cursor: pointer;
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/frame/frame-purple.png');
+                    }
+                }
+                &.frame-yellow {
+                    &::after {
+                        position: absolute;
+                        width: 104%;
+                        height: 114%;
+                        left: -5px;
+                        top: -9px;
+                        content: '';
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 100% 100%;
+                        cursor: pointer;
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/frame/frame-yellow.png');
+                    }
+                }
+                .item-cover {
+                    position: relative;
+                    object-fit: cover !important;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 100% 100%;
+                    cursor: pointer;
+                    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/equip_bg.png');
+                    min-height: 129px;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        top: 30%;
+                        left: 0;
+                        bottom: 0;
+                        background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+                    }
+                    .item-cover-img {
+                        position: absolute;
+                        left: 10px;
+                        top: 25px;
+                        img {
+                            object-fit: cover !important;
+                        }
+                    }
+                }
+                .item-header {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    position: absolute;
+                    width: 60%;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    .info-inner {
+                        padding: 8px 8px 4px;
+                        .item-info-title {
+                            font-size: 20px;
+                            margin-bottom: 0;
+                            position: relative;
+                            color: #2fbced;
+                            text-align: left;
+                            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                            margin-bottom: 4px;
+                        }
+                        .item-info-meta {
+                            font-size: 14px;
+                            position: relative;
+                            color: #b4b4b4;
+                            font-weight: 300;
+                            text-align: left;
+                            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                            margin-bottom: 12px;
+                            span {
+                                padding: 0 4px;
+                            }
+                        }
+                        .item-info-desc {
+                            .info-desc {
+                                font-size: 14px;
+                                color: #01b0e8;
+                                font-weight: 300;
+                                margin-bottom: 5px;
+                            }
+                            .info-enegy {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-between;
+                                background-color: #60025d;
+                                border: 1px #2fbced solid;
+                                height: 100%;
+                                border-radius: 4px;
+                                height: 16px;
+                                .list-enegy {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: flex-end;
+                                    flex: 1 100%;
+                                    height: 100%;
+                                    padding: 3px;
+                                    .item-enegy {
+                                        margin-right: 3px;
+                                        width: 3px;
+                                        height: 100%;
+                                        background-color: #2fbced;
+                                    }
+                                }
+                            }
+                        }
+                        .boost {
+                            position: relative;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            flex-grow: initial;
+                            flex-wrap: wrap;
+                            width: 100%;
+                            margin: 0 auto 5px;
+                            padding: 0;
+                            .item-boost {
+                                position: relative;
+                                flex: 1;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                margin: 0 2px 0 0;
+                            }
+                            .item-info {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+                                margin: 2px 0 0;
+                                .item-name {
+                                    text-align: left;
+                                    font-size: 13px;
+                                    color: rgba(255, 255, 255, 1);
+                                    margin-right: 5px;
+                                    font-weight: 300;
+                                }
+                                .item-desc {
+                                    text-align: left;
+                                    color: rgba(255, 255, 255, 1);
+                                    font-size: 13px;
+                                    font-weight: 300;
+                                }
+                            }
+                            .item-value {
+                                color: rgba(255, 255, 255, 1);
+                                font-size: 9px;
+                                font-weight: bold;
+                                text-align: center;
+                                .small {
+                                    font-weight: normal;
+                                    font-size: 9px;
+                                }
+                                svg,
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                            .progress {
+                                width: 18px;
+                                min-width: 18px;
+                                height: 18px;
+                                background: none;
+                                position: relative;
+                                margin-bottom: 0;
+                                margin-right: 5px;
+                                border-width: 0;
+                                &::after {
+                                    content: '';
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 50%;
+                                    border: 2px solid rgba(255, 255, 255, 0.2);
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                }
+                                >span {
+                                    width: 50%;
+                                    height: 100%;
+                                    overflow: hidden;
+                                    position: absolute;
+                                    top: 0;
+                                    z-index: 1;
+                                }
+                                .progress-left {
+                                    left: 0;
+                                }
+                                .progress-bar {
+                                    width: 100%;
+                                    height: 100%;
+                                    background: none;
+                                    border-width: 2px;
+                                    border-style: solid;
+                                    position: absolute;
+                                    top: 0;
+                                }
+                                .progress-left .progress-bar {
+                                    left: 100%;
+                                    border-top-right-radius: 80px;
+                                    border-bottom-right-radius: 80px;
+                                    border-left: 0;
+                                    -webkit-transform-origin: center left;
+                                    transform-origin: center left;
+                                }
+                                .progress-right {
+                                    right: 0;
+                                    .progress-bar {
+                                        left: -100%;
+                                        border-top-left-radius: 80px;
+                                        border-bottom-left-radius: 80px;
+                                        border-right: 0;
+                                        -webkit-transform-origin: center right;
+                                        transform-origin: center right;
+                                    }
+                                }
+                                .progress-value {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    display: flex;
+                                    width: 100%;
+                                    height: 100%;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 50%;
+                                }
+                            }
+                            @media screen and (max-width: 576px) {
+                                .item-boost {
+                                    width: 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .item-badge {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 100% 100%;
+                    cursor: pointer;
+                    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/badge_bg.png');
+                    width: 82px;
+                    height: 24px;
+                    display: flex;
+                    // justify-content: center;
+                    align-items: center;
+                    padding-left: 10px;
+                    span {
+                        text-align: left;
+                        color: #06ffb8;
+                        font-weight: 300;
+                        font-size: 14px;
+                        margin-top: 4px;
+                    }
+                }
+            }
+        }
+        .info-action {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            .action-link {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                .item-link {
+                    margin: 0 2px;
+                    flex: 1 100%;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

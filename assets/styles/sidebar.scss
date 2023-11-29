@@ -1,0 +1,151 @@
+.show-sidebar {
+    overflow: hidden;
+    height: calc(100vh);
+    min-height: calc(100vh);
+}
+
+.sidebar {
+    // position: fixed;
+    // right: 0px;
+    // bottom: 0px;
+    // width: 420px;
+    // height: calc(100%);
+    // z-index: 4000;
+    // background: rgb(255, 255, 255);
+    // border: 1px solid rgb(229, 232, 235);
+    // overflow: auto;
+    // filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 4px 4px);
+    // transition: transform 0.5s ease 0s, opacity 0.5s ease 0s;
+    // visibility: visible;
+    // transform: translate3d(100%, 0px, 0px);
+    // opacity: 0;
+    // &.open {
+    //     position: fixed;
+    //     right: 0px;
+    //     bottom: 0px;
+    //     width: 420px;
+    //     height: calc(100%);
+    //     z-index: 4000;
+    //     background: rgb(255, 255, 255);
+    //     border: 1px solid rgb(229, 232, 235);
+    //     overflow: auto;
+    //     filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 4px 4px);
+    //     transition: transform 0.5s ease 0s, opacity 0.5s ease 0s;
+    //     visibility: visible;
+    //     transform: translate3d(0px, 0px, 0px);
+    //     opacity: 1;
+    // }
+    .sidebar-header {
+        border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
+        img {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+        }
+        span {
+            font-weight: 300;
+            font-size: 20px;
+            margin-left: 5px;
+            margin-right: 8px;
+            position: relative;
+            top: 3px;
+        }
+        i {
+            font-size: 14px;
+            position: relative;
+            color: #8e8e8e;
+        }
+        svg {
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            right: 16px;
+            top: 18px;
+            color: rgba(0, 0, 0, 0.3);
+        }
+        button {
+            background-color: transparent;
+            padding: 0;
+            display: block;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            padding: 16px;
+            color: #000;
+            border-width: 0;
+            width: 100%;
+            border-radius: 0;
+            &:focus,
+            &:active {
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                outline: none;
+            }
+        }
+    }
+    .sidebar-content {
+        padding: 0 16px 16px 16px;
+        .list-wallet {
+            margin: 16px 0;
+            .item-wallet {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                padding: 2px 0;
+                .item-wallet-left {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-right: 12px;
+                    font-weight: bold;
+                    font-size: 14px;
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                    span {
+                        margin-left: 12px;
+                        font-size: 16px;
+                        position: relative;
+                        top: 2px;
+                        font-weight: 400;
+                    }
+                }
+                .item-wallet-right {
+                    text-align: right;
+                    font-size: 16px;
+                }
+            }
+        }
+        .button-game {
+            margin-bottom: 5px;
+        }
+    }
+    @media (max-width: 520px) {
+        width: 100%;
+        &.opne {
+            width: 100%;
+        }
+    }
+}
+
+.sidebar-overlay {
+    height: 0;
+    position: fixed;
+    z-index: 3000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0s;
+    background-color: rgba(0, 0, 0, 0.3);
+    &.open {
+        min-height: 100vh !important;
+        width: 100vw;
+        height: 100vh;
+        margin-left: -1rem;
+        opacity: 1;
+    }
+}

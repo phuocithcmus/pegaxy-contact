@@ -1,0 +1,16 @@
+.valentine-event-countdown {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1rem;
+	font-size: 1.2rem;
+
+	.title {
+		margin-left: 5px;
+	}
+
+	.timer {
+		color: #05ee11;
+		margin-left: 5px;
+	}
+}

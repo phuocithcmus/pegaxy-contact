@@ -1,0 +1,400 @@
+.viewBreeding {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 4px;
+    .headerTitle {
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: 100% 100%;
+        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/header_title.png');
+        height: 51px;
+        margin: 0 8px 0 10px;
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .headerTitle-inner {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .headerTitle-info {
+                text-shadow: 0 0 5px #fd3fff;
+                padding: 6px 0 0 12px;
+                h5 {
+                    margin: 0;
+                }
+                span {
+                    font-size: 14px;
+                }
+            }
+            .headerTitle-drop {
+                margin: 3px 12px 0 0;
+                .link-drop {
+                    background-color: #a300b7;
+                    color: #2fbced;
+                    text-decoration: none;
+                    &::after {
+                        position: relative;
+                        top: 2px;
+                    }
+                }
+            }
+        }
+        .breeding-filter {
+            .btn-link {
+                color: rgba(#fff, 0.5);
+                &:hover,
+                &:active,
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    color: #fff;
+                }
+            }
+        }
+        .dropdown-scroll {
+            width: 100%;
+            height: calc(100vh - 340px);
+            max-height: 420px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+    }
+    .selecePega {
+        width: 25%;
+        .viewPega {
+            .list-pick {
+                flex-direction: column;
+                .item-pega {
+                    width: 100%;
+                    margin: 0;
+                    padding: 6px 12px;
+                    text-decoration: none;
+                    .item-box {
+                        .item-class.class-pega {
+                            background-color: transparent;
+                            color: #fff;
+                            font-size: 14px;
+                            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/ic_heart.png');
+                            background-position: center;
+                            background-size: 100% 100%;
+                            background-repeat: no-repeat;
+                            height: 30px;
+                            width: 36px;
+                            //
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .showPega {
+        width: 50%;
+        background-repeat: no-repeat;
+        background-position: bottom 100px right;
+        background-size: contain;
+        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/grid_breeding.png');
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+        .showPega-header {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            .showPega-header-title {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                span {
+                    padding: 0 10px;
+                    position: relative;
+                    top: 2px;
+                    font-size: 22px;
+                }
+            }
+        }
+        .showPega-alert {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(#000, 0.5);
+            padding: 15px 80px;
+            margin-top: 100px;
+            .showPega-alert-icon {
+                font-size: 40px;
+                color: #710675;
+                margin-right: 10px;
+            }
+            .showPega-alert-info {
+                text-align: center;
+                position: relative;
+                top: 2px;
+                span {
+                    color: red;
+                }
+            }
+        }
+        .showPega-content {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            .pega-content {
+                flex: 1 100%;
+                width: 50%;
+                padding: 10px;
+                &.content-left {
+                    flex: 1 100%;
+                    width: 50%;
+                }
+                &.content-left {
+                    flex: 1 100%;
+                    width: 50%;
+                }
+            }
+        }
+        .viewButton {
+            width: 280px;
+            position: absolute;
+            bottom: 20px;
+            left: auto;
+            right: auto;
+            margin: 0 auto;
+        }
+        .viewAction {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 20px;
+            left: auto;
+            right: auto;
+            margin: 0 auto;
+            .chooseTicket {
+                position: relative;
+                background-repeat: no-repeat;
+                background-position: bottom center;
+                background-size: 100% 100%;
+                background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-bg.png');
+                width: 70px;
+                height: 70px;
+                margin-right: 10px;
+                .chooseFrame {
+                    position: relative;
+                    background-repeat: no-repeat;
+                    background-position: bottom center;
+                    background-size: 100% 100%;
+                    width: 70px;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &.select {
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-select.png');
+                    }
+                    &.purple {
+                        // background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-purple.png');
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-purple.png');
+                    }
+                    &.green {
+                        // background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-green.png');
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-green.png');
+                    }
+                    &.blue {
+                        // background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-blue.png');
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-blue.png');
+                    }
+                    &.yellow {
+                        // background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-yellow.png');
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-yellow.png');
+                    }
+                    .chooseFrame-ticket {
+                        width: 48px;
+                        height: 48px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .chooseFrame-icon {
+                        position: absolute;
+                        bottom: 5px;
+                        right: 5px;
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+            .viewButton {
+                position: relative;
+                width: 280px;
+                margin: 0 auto;
+                height: 70px;
+                bottom: auto;
+            }
+        }
+    }
+    @media (min-width: 1600px) {
+        .selecePega {
+            max-width: 282px;
+            min-width: 282px;
+            width: 282px;
+        }
+        .showPega {
+            width: 100%;
+            max-width: 100%;
+            flex: 1 100%;
+        }
+    }
+}
+
+.confirmBreeding {
+    .item-inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        .item-cover {}
+        .item-info {
+            flex: 1;
+            padding: 20px;
+            .item-row {
+                margin-bottom: 20px;
+                position: relative;
+                &.list {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                }
+                &.hoz {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    div {
+                        margin-right: 15px;
+                    }
+                    .item-title {
+                        margin: 0 20px 0 0;
+                        width: 70px;
+                    }
+                    .item-desc {
+                        margin: 0 25px 0 0;
+                    }
+                }
+                .item-title {
+                    color: #2fbced;
+                    margin-bottom: 10px;
+                }
+                .item-action {
+                    position: absolute;
+                    right: 5px;
+                    bottom: 0px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    div {
+                        padding: 0 3px;
+                    }
+                    img {
+                        display: block;
+                    }
+                }
+                .list-inner {
+                    flex: 1 100%;
+                    &:first-child {
+                        .item-title {
+                            border-width: 0;
+                            padding-left: 0;
+                            text-align: left;
+                        }
+                        .item-desc {
+                            padding-left: 0;
+                            text-align: left;
+                        }
+                    }
+                    .item-title {
+                        border-left: 1px #2fbced solid;
+                        // padding-left: 20px;
+                        text-align: center;
+                        span {
+                            position: relative;
+                            top: 2px;
+                        }
+                    }
+                    .item-desc {
+                        // padding-left: 20px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    .list-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .viewButton {
+            margin: 5px 10px;
+            width: 200px;
+            height: 50px;
+            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button-start.png');
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span {
+                text-transform: uppercase;
+                font-size: 22px;
+                position: relative;
+                top: 4px;
+                text-shadow: 0 0 5px #fd3fff;
+            }
+            &.disabled {
+                background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button-no-color.png');
+                span {
+                    text-shadow: 0 0 5px #333;
+                }
+            }
+            &.secondary {
+                background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button-color.png');
+                span {
+                    text-shadow: 0 0 1px rgba(#000, 0.1);
+                }
+            }
+            &:hover {
+                transform: scale(1.03);
+                animation: pulse 0.5s;
+                box-shadow: 0 0 0 8px rgba(#fff, 0);
+                border-radius: 3px;
+            }
+        }
+    }
+    .view-loading {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        span {
+            font-size: 24px;
+            text-shadow: 0 0 5px #fd3fff;
+            position: relative;
+            top: 10px;
+        }
+    }
+}

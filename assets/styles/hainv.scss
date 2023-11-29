@@ -1,0 +1,234 @@
+.button-game {
+    &.disabled {
+        .button-game-left {
+            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button/btn_secondary_left.png');
+        }
+        .button-game-right {
+            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button/btn_secondary_right.png');
+        }
+        .button-game-content {
+            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button/btn_secondary_center.png');
+        }
+    }
+    &.disable {
+        .button-game-left {
+            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button/btn_secondary_left.png');
+        }
+        .button-game-right {
+            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button/btn_secondary_right.png');
+        }
+        .button-game-content {
+            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button/btn_secondary_center.png');
+        }
+    }
+}
+
+.dropdown-filter-inside {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.dropdown-filter {
+    margin-left: 10px;
+}
+
+.selecePega {
+    .viewPega {
+        display: flex;
+        flex-direction: column;
+        justify-content: normal;
+        align-items: normal;
+        &.view-scroll {
+            position: relative;
+            overflow: hidden;
+            height: calc(100vh - 300px);
+            max-height: 100%;
+            overflow-y: scroll;
+        }
+    }
+    @media (min-height: 1024px) {
+        .viewPega {
+            &.view-scroll {
+                height: 50vh;
+            }
+        }
+    }
+    @media (min-width: 1600px) {
+        .viewPega {
+            &.view-scroll {
+                height: 72vh;
+            }
+        }
+    }
+}
+
+.viewBreeding .showPega .showPega-header {
+    margin-top: 0;
+}
+
+.viewButton {
+    cursor: pointer;
+}
+
+.viewCongratulation {
+    z-index: 99999;
+    .viewButton {
+        span {
+            top: 0;
+        }
+    }
+    .continue {
+        text-decoration: none;
+    }
+}
+
+.male {
+    &.thumb-pega {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+}
+
+.list-link {
+    .viewButton {
+        &.secondary {
+            &.disabled {
+                background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button-no-color.png');
+            }
+        }
+    }
+}
+
+.item-class.class-pega.breed {
+    background-color: transparent !important;
+    color: #fff;
+    font-size: 14px;
+    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/ic_heart.png') !important;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 36px;
+}
+
+.item-cover-select {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.spin {}
+
+.logo-radius {
+    border-radius: 50%;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+
+.slip input::-webkit-outer-spin-button,
+.slip input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+.slip input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.menu-stats {
+    width: 300px;
+    z-index: 9999;
+}
+
+.breeding-filter h6 {
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.breeding-filter {
+    .filter-bloodline {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        .formCheck {
+            margin-bottom: 10px;
+            width: 33%;
+            margin-left: 0;
+            padding-right: 5px;
+            padding-left: 22px;
+            .checkmark {
+                width: 16px;
+                height: 16px;
+                &::after {
+                    left: 6px;
+                    top: 2px;
+                    width: 5px;
+                    height: 10px;
+                }
+            }
+            .check-title {
+                font-size: 14px;
+                top: 1px;
+            }
+        }
+    }
+    .filter-breedtype {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        .formCheck {
+            margin-bottom: 10px;
+            width: 33%;
+            margin-left: 0;
+            padding-right: 5px;
+            padding-left: 22px;
+            .checkmark {
+                width: 16px;
+                height: 16px;
+                &::after {
+                    left: 6px;
+                    top: 2px;
+                    width: 5px;
+                    height: 10px;
+                }
+            }
+            .check-title {
+                font-size: 14px;
+                top: 1px;
+            }
+        }
+    }
+}
+
+.add {
+    .item-box {
+        .item-cover {
+            div {
+                margin-left: 20px;
+            }
+            span {
+                margin-left: 10px !important;
+                font-size: 25px !important;
+            }
+        }
+    }
+}

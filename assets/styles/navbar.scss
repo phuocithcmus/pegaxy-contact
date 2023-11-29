@@ -1,0 +1,436 @@
+.navbar {
+    height: 135px;
+    z-index: 10;
+    .navbar-inner {
+        // position: relative;
+        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/bg_menu_anim.png');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: contain;
+        width: 940px;
+        min-width: 940px;
+        margin: 0 auto;
+        min-height: 100vh;
+        .navbar-nav {
+            .nav-item {
+                position: relative;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+                cursor: pointer;
+                span {
+                    display: none;
+                }
+                .view-badge {
+                    position: absolute;
+                    top: 3px;
+                    right: -30px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    color: #ffbb00;
+                    font-size: 12px;
+                    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/nav-badge.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 100% 100%;
+                    height: 16px;
+                    min-width: 72px;
+                    padding: 0 5px 0 8px;
+                    &.align-left {
+                        top: 3px;
+                        right: auto;
+                        left: -12px;
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/nav-badge-left.png');
+                    }
+                    &.align-right {
+                        top: 3px;
+                        right: -17px;
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/nav-badge.png');
+                    }
+                    i {
+                        font-size: 9px;
+                        position: relative;
+                        top: -1px;
+                    }
+                    span {
+                        display: block;
+                        position: relative;
+                        top: 2px;
+                        margin-left: 4px;
+                        font-size: 12px;
+                        animation: blinker 1s linear infinite;
+                    }
+                }
+                &.link-renting {
+                    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/renting.png');
+                }
+                &.link-marketplace {
+                    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/marketplace.png');
+                }
+                &.link-racing {
+                    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/racing.png');
+                }
+                &.link-fuse {
+                    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/fuse.png');
+                }
+                &.link-breeding {
+                    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/breeding.png');
+                }
+                &.link-my-assets {
+                    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/my_assets.png');
+                }
+                &.link-start {
+                    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/start.png');
+                }
+                &.link-connect {
+                    background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/connect.png');
+                }
+                &:hover,
+                &.active {
+                    &.link-renting {
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/renting_active.png');
+                    }
+                    &.link-marketplace {
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/marketplace_active.png');
+                    }
+                    &.link-racing {
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/racing_active.png');
+                    }
+                    &.link-fuse {
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/fuse_active.png');
+                    }
+                    &.link-breeding {
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/breeding_active.png');
+                    }
+                    &.link-my-assets {
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/my_assets_active.png');
+                    }
+                    &.link-start {
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/start_active.png');
+                    }
+                    &.link-connect {
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/connect_active.png');
+                    }
+                }
+                .nav-anim {
+                    position: absolute;
+                    top: 0px;
+                    left: -13px;
+                    right: 0;
+                    margin: 0 auto;
+                    width: 170px;
+                    height: 96px;
+                    div {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 170px;
+                        height: 96px;
+                        float: left;
+                        background-size: contain;
+                        background-position: 50% 50%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 100% 100%;
+                        background-repeat: no-repeat;
+                    }
+                    #views {
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/anim/Racing_00001.png');
+                    }
+                    #steps {
+                        -webkit-animation-timing-function: steps(20, end);
+                        animation-timing-function: steps(20, end);
+                    }
+                }
+                &.active {
+                    .nav-anim {
+                        #views {
+                            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/navbar/anim/Racing_00020.png');
+                        }
+                    }
+                }
+                &:hover {
+                    .nav-anim {
+                        #views {
+                            display: none;
+                        }
+                        div {
+                            -webkit-animation: navbar 1s forwards;
+                            animation: navbar 1s forwards;
+                            animation-iteration-count: 1;
+                            -webkit-animation-iteration-count: 1;
+                            animation-fill-mode: forwards;
+                            -webkit-animation-fill-mode: forwards;
+                        }
+                    }
+                }
+            }
+        }
+        .navbar-assest {
+            position: absolute;
+            right: 12px;
+            top: 44px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            .assest-inner {
+                position: relative;
+                margin-left: 10px;
+                width: 36px;
+                height: 36px;
+                border-radius: 100%;
+                background-color: rgba(#b900b2, 0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                &.active {
+                    background-color: rgba(#ea00e3, 1);
+                }
+            }
+            .assest-title {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                min-width: 36px;
+                height: 36px;
+                border-radius: 5px;
+                background-color: rgba(#b900b2, 0.8);
+                padding: 0 10px;
+                cursor: pointer;
+                &.active {
+                    background-color: rgba(#ea00e3, 1);
+                }
+                .title-btn {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    img,
+                    svg {
+                        margin-right: 4px;
+                        width: 20px;
+                        height: 20px;
+                    }
+                    span {
+                        position: relative;
+                        top: 1px;
+                    }
+                }
+            }
+            .assest-badge {
+                position: absolute;
+                top: -6px;
+                right: -6px;
+                background-color: #ffbb00;
+                height: 18px;
+                min-width: 18px;
+                border-radius: 9px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                // &.shadow {
+                //     box-shadow: 0 0 10px #ff0042, 0 0 5px #ff0042;
+                // }
+                span {
+                    color: #360d57;
+                    position: relative;
+                    text-align: center;
+                    top: 2px;
+                }
+                svg {
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 9px;
+                    box-shadow: 0 0 10px #ff0042, 0 0 5px #ff0042;
+                }
+            }
+        }
+        .navbar-mp {
+            position: absolute;
+            width: 191px;
+            height: 82px;
+            left: 2px;
+            top: 16px;
+            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/anim-mp/2.png');
+            background-size: cover;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            .anim-mp {
+                width: 191px;
+                height: 82px;
+                position: relative;
+                background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/anim-mp/2.png');
+                background-size: cover;
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                span {
+                    text-transform: uppercase;
+                    text-shadow: 0 0 5px #ff7ceb, 0 0 10px #ff7ceb;
+                    position: relative;
+                    text-align: center;
+                    top: 2px;
+                    left: 22px;
+                    font-size: 20px;
+                }
+                &:hover {
+                    // transition: background-position 1s ease;
+                    animation: btn_mp 1s infinite ease;
+                    // animation-name: btn_mp;
+                    // animation-duration: 1s;
+                    // animation-direction: alternate;
+                    // animation-timing-function: ease;
+                    // animation-iteration-count: infinite;
+                }
+            }
+        }
+    }
+    @media (min-width: 1600px) {
+        height: 160px;
+        .navbar-inner {
+            width: 1200px;
+            min-width: 1200px;
+            .navbar-nav {
+                height: 70px;
+                margin: 40px 150px 0 150px;
+                .nav-item {
+                    .nav-anim {
+                        div {
+                            left: 0;
+                            top: 0;
+                            width: 184px;
+                            height: 128px;
+                        }
+                    }
+                }
+            }
+            .navbar-mp {
+                width: 263px;
+                height: 113px;
+                .anim-mp {
+                    width: 263px;
+                    height: 113px;
+                    span {
+                        font-size: 25px;
+                        left: 30px;
+                    }
+                }
+            }
+        }
+    }
+    // @media (max-width: 480px) {
+    //     .navbar-inner {
+    //         width: 100%;
+    //         background-size: 150%;
+    //         .navbar-nav {
+    //             margin: 12px 0 0 0;
+    //             .nav-item {
+    //                 .nav-anim {
+    //                     display: none;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+.navdrop {
+    position: absolute;
+    width: 360px;
+    min-height: calc(80vh);
+    background-color: #fff;
+    border-radius: 10px;
+    top: 54px;
+    right: -12px;
+    z-index: 1000;
+    &.drop-wallet {
+        right: 36px;
+    }
+    &.drop-menu {
+        width: 240px;
+        min-height: auto;
+        right: auto;
+        left: auto;
+        &::before {
+            content: "";
+            position: absolute;
+            right: auto;
+            left: 50%;
+            bottom: 100%;
+            width: 16px;
+            height: 7px;
+            transform: translateX(-50%);
+            background: url("data:image/svg+xml,%3Csvg width='32' height='13' viewBox='0 0 32 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3432 2.65685L0 13H32L21.6569 2.65686C18.5327 -0.467339 13.4673 -0.467344 10.3432 2.65685Z' fill='%23FCFCFD'/%3E%3C/svg%3E%0A") no-repeat 100% 50% / 100% auto;
+        }
+        .navdrop-inner {
+            width: 240px;
+            min-height: auto;
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        right: 12px;
+        bottom: 100%;
+        width: 16px;
+        height: 7px;
+        transform: translateX(-50%);
+        background: url("data:image/svg+xml,%3Csvg width='32' height='13' viewBox='0 0 32 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3432 2.65685L0 13H32L21.6569 2.65686C18.5327 -0.467339 13.4673 -0.467344 10.3432 2.65685Z' fill='%23FCFCFD'/%3E%3C/svg%3E%0A") no-repeat 100% 50% / 100% auto;
+    }
+    &.fixed {
+        height: calc(80vh);
+        max-height: calc(80vh);
+        overflow-y: scroll;
+    }
+    .navdrop-inner {
+        position: relative;
+        width: 360px;
+        min-height: calc(80vh);
+        &.fixed {
+            height: calc(80vh);
+            max-height: calc(80vh);
+            overflow-y: scroll;
+        }
+    }
+    // @media (max-width: 480px) {
+    //     display: none;
+    // }
+}
+
+.alertTop {
+    position: relative;
+    width: 100%;
+    padding: 10px 24px 6px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fe1a19;
+    span {
+        color: #fff;
+        font-size: 22px;
+        text-align: center;
+    }
+    .alertTop-close {
+        position: absolute;
+        right: 10px;
+        top: 6px;
+        padding: 5px;
+        i {
+            font-size: 16px;
+        }
+    }
+}

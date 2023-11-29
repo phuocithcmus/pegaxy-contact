@@ -1,0 +1,269 @@
+// The dropdown wrapper (`<div>`)
+.dropup,
+.dropend,
+.dropdown,
+.dropstart {
+    position: relative;
+}
+
+.dropdown-toggle {
+    white-space: nowrap;
+    // Generate the caret automatically
+    @include caret();
+}
+
+.dropdown-toggle[aria-expanded=true] {
+    @include caret(up);
+}
+
+.dropdown-toggle[aria-expanded=false] {
+    @include caret(down);
+}
+
+// The dropdown menu
+.dropdown-menu {
+    position: absolute;
+    z-index: $zindex-dropdown;
+    display: none; // none by default, but block on "open" of the menu
+    min-width: $dropdown-min-width;
+    padding: 8px;
+    margin: 0; // Override default margin of ul
+    @include font-size($dropdown-font-size);
+    color: #2fbced;
+    text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+    list-style: none;
+    background-color: rgba($color: #740472, $alpha: 1);
+    background-clip: padding-box;
+    border: $dropdown-border-width solid #b10eae;
+    margin-top: 10px!important;
+    @include border-radius($dropdown-border-radius);
+    @include box-shadow($dropdown-box-shadow);
+    z-index: 10000;
+    &::before {
+        content: "";
+        // position: absolute;
+        // left: 16px;
+        // bottom: 100%;
+        // width: 12px;
+        // height: 7px;
+        // transform: translateX(-50%);
+        // background: url("data:image/svg+xml,%3Csvg width='32' height='13' viewBox='0 0 32 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3432 2.65685L0 13H32L21.6569 2.65686C18.5327 -0.467339 13.4673 -0.467344 10.3432 2.65685Z' fill='%23FCFCFD'/%3E%3C/svg%3E%0A") no-repeat 100% 50% / 100% auto;
+        position: absolute;
+        left: 16px;
+        right: auto;
+        bottom: 100%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 8px 8px 8px;
+        border-color: transparent transparent #b10eae transparent;
+    }
+    &.dropdown-menu-right {
+        &::before {
+            position: absolute;
+            left: auto!important;
+            right: 16px!important;
+            bottom: 100%;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 8px 8px 8px;
+            border-color: transparent transparent #b10eae transparent;
+        }
+    }
+    &[data-bs-popper] {
+        top: 100%;
+        left: 0;
+        margin-top: $dropdown-spacer;
+    }
+    &.dropdown-full {
+        left: 0!important;
+        right: 0!important;
+    }
+}
+
+// scss-docs-start responsive-breakpoints
+// We deliberately hardcode the `bs-` prefix because we check
+// this custom property in JS to determine Popper's positioning
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+        .dropdown-menu#{$infix}-start {
+            --bs-position: start;
+            &[data-bs-popper] {
+                right: auto;
+                left: 0;
+            }
+        }
+        .dropdown-menu#{$infix}-end {
+            --bs-position: end;
+            &[data-bs-popper] {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+
+// scss-docs-end responsive-breakpoints
+// Allow for dropdowns to go bottom up (aka, dropup-menu)
+// Just add .dropup after the standard .dropdown class and you're set.
+.dropup {
+    .dropdown-menu[data-bs-popper] {
+        top: auto;
+        bottom: 100%;
+        margin-top: 0;
+        margin-bottom: $dropdown-spacer;
+    }
+    .dropdown-toggle {
+        @include caret(up);
+    }
+}
+
+.dropend {
+    .dropdown-menu[data-bs-popper] {
+        top: 0;
+        right: auto;
+        left: 100%;
+        margin-top: 0;
+        margin-left: $dropdown-spacer;
+    }
+    .dropdown-toggle {
+        @include caret(end);
+        &::after {
+            vertical-align: 0;
+        }
+    }
+}
+
+.dropstart {
+    .dropdown-menu[data-bs-popper] {
+        top: 0;
+        right: 100%;
+        left: auto;
+        margin-top: 0;
+        margin-right: $dropdown-spacer;
+    }
+    .dropdown-toggle {
+        @include caret(start);
+        &::before {
+            vertical-align: 0;
+        }
+    }
+}
+
+// Dividers (basically an `<hr>`) within the dropdown
+.dropdown-divider {
+    height: 0;
+    margin: $dropdown-divider-margin-y 0;
+    overflow: hidden;
+    border-top: 1px solid $dropdown-divider-bg;
+}
+
+// Links, buttons, and more within the dropdown menu
+//
+// `<button>`-specific styles are denoted with `// For <button>s`
+.dropdown-item {
+    display: block;
+    width: 100%; // For `<button>`s
+    padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+    border-radius: 5px;
+    margin: 2px 0;
+    clear: both;
+    font-weight: $font-weight-normal;
+    color: #2fbced;
+    text-align: inherit; // For `<button>`s
+    text-decoration: none;
+    white-space: nowrap; // prevent links from randomly breaking onto new lines
+    background-color: transparent; // For `<button>`s
+    border: 0; // For `<button>`s
+    // Prevent dropdown overflow if there's no padding
+    // See https://github.com/twbs/bootstrap/pull/27703
+    @if $dropdown-padding-y==0 {
+        &:first-child {
+            @include border-top-radius($dropdown-inner-border-radius);
+        }
+        &:last-child {
+            @include border-bottom-radius($dropdown-inner-border-radius);
+        }
+    }
+    &:hover,
+    &:focus {
+        color: #fff;
+        text-decoration: none;
+        @include gradient-bg($dropdown-link-hover-bg);
+    }
+    &.active,
+    &:active {
+        color: $dropdown-link-active-color;
+        text-decoration: none;
+        @include gradient-bg($dropdown-link-active-bg);
+    }
+    &.disabled,
+    &:disabled {
+        color: $dropdown-link-disabled-color;
+        pointer-events: none;
+        background-color: transparent;
+        // Remove CSS gradients if they're enabled
+        background-image: if($enable-gradients, none, null);
+    }
+    span {
+        position: relative;
+        top: 2px;
+    }
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+// Dropdown section headers
+.dropdown-header {
+    display: block;
+    padding: $dropdown-header-padding;
+    margin-bottom: 0; // for use with heading elements
+    @include font-size($font-size-sm);
+    color: $dropdown-header-color;
+    white-space: nowrap; // as with > li > a
+}
+
+// Dropdown text
+.dropdown-item-text {
+    display: block;
+    padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+    color: $dropdown-link-color;
+}
+
+// Dark dropdowns
+.dropdown-menu-dark {
+    color: $dropdown-dark-color;
+    background-color: $dropdown-dark-bg;
+    border-color: $dropdown-dark-border-color;
+    @include box-shadow($dropdown-dark-box-shadow);
+    .dropdown-item {
+        color: $dropdown-dark-link-color;
+        &:hover,
+        &:focus {
+            color: $dropdown-dark-link-hover-color;
+            @include gradient-bg($dropdown-dark-link-hover-bg);
+        }
+        &.active,
+        &:active {
+            color: $dropdown-dark-link-active-color;
+            @include gradient-bg($dropdown-dark-link-active-bg);
+        }
+        &.disabled,
+        &:disabled {
+            color: $dropdown-dark-link-disabled-color;
+        }
+    }
+    .dropdown-divider {
+        border-color: $dropdown-dark-divider-bg;
+    }
+    .dropdown-item-text {
+        color: $dropdown-dark-link-color;
+    }
+    .dropdown-header {
+        color: $dropdown-dark-header-color;
+    }
+}

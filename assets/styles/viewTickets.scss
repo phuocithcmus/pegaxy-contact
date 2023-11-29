@@ -1,0 +1,63 @@
+.viewTickets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .list-pick {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .item-tickets {
+            margin-bottom: 12px;
+            width: 25%;
+            padding: 12px;
+            &.col-5 {
+                width: 20%;
+                .info-action {
+                    .action-link {
+                        width: 140px !important;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .item-box {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .item-cover {
+                    position: relative;
+                    object-fit: cover !important;
+                    min-height: 200px;
+                    img {
+                        object-fit: cover !important;
+                    }
+                }
+            }
+            .info-action {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                .action-link {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    &.full {
+                        width: 100%;
+                        .item-link {
+                            width: 100%;
+                        }
+                    }
+                    .item-link {
+                        margin: 0 2px;
+                    }
+                }
+            }
+        }
+    }
+}

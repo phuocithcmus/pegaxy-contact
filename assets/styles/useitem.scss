@@ -1,0 +1,856 @@
+.viewUseItem {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: nowrap;
+    // justify-content: space-between;
+    margin-top: 4px;
+    min-height: calc(100vh - 240px);
+    .headerTitle {
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: 100% 100%;
+        height: 32px;
+        margin: 0 0 0 5px;
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-image: none;
+        &.full {
+            margin-left: 0;
+            margin-right: -11px;
+        }
+        .headerTitle-inner {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .headerTitle-info {
+                text-shadow: none;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .formCheck {
+                    min-height: 20px;
+                    margin-left: 0;
+                    margin-right: 10px;
+                    span {
+                        color: #fff;
+                    }
+                }
+            }
+            .headerTitle-drop {
+                margin: 3px 12px 0 0;
+                .link-drop {
+                    background-color: #a300b7;
+                    color: #2fbced;
+                    text-decoration: none;
+                    &::after {
+                        position: relative;
+                        top: 2px;
+                    }
+                }
+            }
+        }
+        .breeding-filter {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            .btn-link {
+                color: rgba(#fff, 1);
+                &:hover,
+                &:active,
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    color: #fff;
+                }
+            }
+            .filter-bloodline {
+                .formCheck {
+                    width: 33%;
+                }
+                &.col2 {
+                    .formCheck {
+                        width: 50%;
+                    }
+                }
+                &.col3 {
+                    .formCheck {
+                        width: 33%;
+                    }
+                }
+                &.col4 {
+                    .formCheck {
+                        width: 25%;
+                    }
+                }
+            }
+        }
+        .auto-scroll {
+            width: 100%;
+        }
+        .dropdown-scroll {
+            width: 100%;
+            height: calc(100vh - 340px);
+            max-height: 420px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+    }
+    .selecePega {
+        width: 25%;
+        .viewPega {
+            .list-pick {
+                flex-direction: column;
+                .item-pega {
+                    width: 100%;
+                    margin: 0;
+                    padding: 6px 12px;
+                    text-decoration: none;
+                    .item-box {
+                        .item-class.class-pega {
+                            background-color: transparent;
+                            color: #fff;
+                            font-size: 14px;
+                            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/ic_heart.png');
+                            background-position: center;
+                            background-size: 100% 100%;
+                            background-repeat: no-repeat;
+                            height: 30px;
+                            width: 36px;
+                            //
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .showPega {
+        position: absolute;
+        left: 0;
+        right: 620px;
+        top: 0;
+        // width: 45%;
+        height: 100%;
+        padding: 5px 0 0 5px;
+        // background-repeat: no-repeat;
+        // background-position: bottom 100px right;
+        // background-size: contain;
+        // background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/grid_breeding.png');
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .showPega-header {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            .showPega-header-title {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                span {
+                    padding: 0 10px;
+                    position: relative;
+                    top: 2px;
+                    font-size: 22px;
+                }
+            }
+        }
+        .showPega-alert {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(#000, 0.5);
+            padding: 15px 80px;
+            margin-top: 100px;
+            .showPega-alert-icon {
+                font-size: 40px;
+                color: #710675;
+                margin-right: 10px;
+            }
+            .showPega-alert-info {
+                text-align: center;
+                position: relative;
+                top: 2px;
+                span {
+                    color: red;
+                }
+            }
+        }
+        .showPega-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0px;
+            .pega-content {
+                flex: 1 100%;
+                width: 100%;
+                height: 100%;
+                padding: 0px;
+            }
+            .pega-title {
+                position: absolute;
+                left: 15px;
+                top: 15px;
+                z-index: 100;
+                .title {
+                    font-size: 20px;
+                    font-weight: 300;
+                    margin-bottom: 2px;
+                }
+                .desc {
+                    font-size: 14px;
+                }
+                .info {
+                    border-left: 3px #9f0197 solid;
+                    padding: 5px 100px 5px 10px;
+                    background: linear-gradient(90deg, rgba(0, 0, 0, .4) 0%, rgba(0, 0, 0, 0) 100%);
+                    margin: 10px 0;
+                    .item {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        span {
+                            margin-left: 5px;
+                            color: #e82c1b;
+                        }
+                    }
+                }
+            }
+            .select-pega {
+                cursor: pointer;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(#3a4b92, 0.23);
+                span {
+                    text-align: center;
+                    color: #585c84;
+                    font-size: 40px;
+                    margin-top: 20px;
+                }
+            }
+            .action {
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                right: 10px;
+                top: auto;
+                bottom: auto;
+                border: 2px rgba(#fff, 0.4) solid;
+                background-color: rgba(#fff, 0.25);
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                &.look {
+                    top: 15px;
+                }
+                &.change-pega {
+                    bottom: 10px;
+                }
+            }
+        }
+        .viewButton {
+            width: 280px;
+            position: absolute;
+            bottom: 20px;
+            left: auto;
+            right: auto;
+            margin: 0 auto;
+        }
+        .viewAction {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 20px;
+            left: auto;
+            right: auto;
+            margin: 0 auto;
+            .chooseTicket {
+                position: relative;
+                background-repeat: no-repeat;
+                background-position: bottom center;
+                background-size: 100% 100%;
+                background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-bg.png');
+                width: 70px;
+                height: 70px;
+                margin-right: 10px;
+                .chooseFrame {
+                    position: relative;
+                    background-repeat: no-repeat;
+                    background-position: bottom center;
+                    background-size: 100% 100%;
+                    width: 70px;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &.select {
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-select.png');
+                    }
+                    &.purple {
+                        // background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-purple.png');
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-purple.png');
+                    }
+                    &.green {
+                        // background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-green.png');
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-green.png');
+                    }
+                    &.blue {
+                        // background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-blue.png');
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-blue.png');
+                    }
+                    &.yellow {
+                        // background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-yellow.png');
+                        background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/breed/frame-yellow.png');
+                    }
+                    .chooseFrame-ticket {
+                        width: 48px;
+                        height: 48px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .chooseFrame-icon {
+                        position: absolute;
+                        bottom: 5px;
+                        right: 5px;
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+            .viewButton {
+                position: relative;
+                width: 280px;
+                margin: 0 auto;
+                height: 70px;
+                bottom: auto;
+            }
+        }
+    }
+    .showItem {
+        width: 100%;
+        max-width: 620px;
+        height: 100%;
+        padding-left: 20px;
+        float: right;
+    }
+    @media (min-width: 1600px) {
+        min-height: 60vh;
+        // .showPega {
+        //     width: 45%;
+        // }
+        // .showItem {
+        //     width: 100%;
+        //     max-width: 620px;
+        // }
+    }
+}
+
+.viewStats {
+    .viewTable {
+        &.full {
+            margin-left: 0;
+            margin-right: -11px;
+        }
+    }
+    &.view-scroll {
+        position: relative;
+        overflow: hidden;
+        height: calc(100vh - 280px);
+        max-height: 100%;
+        overflow-y: scroll;
+    }
+    @media (min-height: 1024px) {
+        &.view-scroll {
+            height: 50vh;
+        }
+    }
+    @media (min-width: 1600px) {
+        &.view-scroll {
+            height: 72vh;
+        }
+    }
+}
+
+.confirmUseItem {
+    .item-inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        .item-cover {}
+        .item-info {
+            flex: 1;
+            padding: 20px;
+            .item-row {
+                margin-bottom: 20px;
+                position: relative;
+                &.list {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                }
+                &.hoz {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    div {
+                        margin-right: 15px;
+                    }
+                    .item-title {
+                        margin: 0 20px 0 0;
+                        width: 70px;
+                    }
+                    .item-desc {
+                        margin: 0 25px 0 0;
+                    }
+                }
+                .item-title {
+                    color: #2fbced;
+                    margin-bottom: 10px;
+                }
+                .item-action {
+                    position: absolute;
+                    right: 5px;
+                    bottom: 0px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    div {
+                        padding: 0 3px;
+                    }
+                    img {
+                        display: block;
+                    }
+                }
+                .list-inner {
+                    flex: 1 100%;
+                    &:first-child {
+                        .item-title {
+                            border-width: 0;
+                            padding-left: 0;
+                            text-align: left;
+                        }
+                        .item-desc {
+                            padding-left: 0;
+                            text-align: left;
+                        }
+                    }
+                    .item-title {
+                        border-left: 1px #2fbced solid;
+                        // padding-left: 20px;
+                        text-align: center;
+                        span {
+                            position: relative;
+                            top: 2px;
+                        }
+                    }
+                    .item-desc {
+                        // padding-left: 20px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    .list-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .viewButton {
+            margin: 5px 10px;
+            width: 200px;
+            height: 50px;
+            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button-start.png');
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span {
+                text-transform: uppercase;
+                font-size: 22px;
+                position: relative;
+                top: 4px;
+                text-shadow: 0 0 5px #fd3fff;
+            }
+            &.disabled {
+                background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button-no-color.png');
+                span {
+                    text-shadow: 0 0 5px #333;
+                }
+            }
+            &.secondary {
+                background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/button-color.png');
+                span {
+                    text-shadow: 0 0 1px rgba(#000, 0.1);
+                }
+            }
+            &:hover {
+                transform: scale(1.03);
+                animation: pulse 0.5s;
+                box-shadow: 0 0 0 8px rgba(#fff, 0);
+                border-radius: 3px;
+            }
+        }
+    }
+    .view-loading {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        span {
+            font-size: 24px;
+            text-shadow: 0 0 5px #fd3fff;
+            position: relative;
+            top: 10px;
+        }
+    }
+}
+
+.formUseItem {
+    .header-cost {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        .title {
+            color: rgba(#fff, 0.75);
+        }
+        .back {
+            cursor: pointer;
+            span {
+                margin-right: 10px;
+            }
+        }
+    }
+    .change-color {
+        max-width: 400px;
+        margin: 0 auto;
+        .header-color {
+            margin-bottom: 5px;
+            border-bottom: 1px rgba(#fff, 0.25) solid;
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                li {
+                    margin-right: 20px;
+                    border-bottom: 2px transparent solid;
+                    padding: 2px 0;
+                    span {
+                        color: #b5b4bc;
+                    }
+                    &.active {
+                        border-bottom-color: #fff;
+                        span {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        .content-color {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(#000, 0.25);
+            border-radius: 5px;
+            padding: 10px;
+            .inner-item {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 100%;
+                .item-color {
+                    position: relative;
+                    display: flex;
+                    padding: 1px;
+                    width: 54px;
+                    height: 54px;
+                    &.active {
+                        &::after {
+                            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/lootbox/mask_color.svg');
+                            background-position: center;
+                            background-size: 100% 100%;
+                            background-repeat: no-repeat;
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .pick {
+                            top: 1px;
+                            left: 1px;
+                            bottom: 1px;
+                            right: 1px;
+                        }
+                    }
+                    &:hover {
+                        .pick {
+                            top: 1px;
+                            left: 1px;
+                            bottom: 1px;
+                            right: 1px;
+                        }
+                    }
+                    .pick {
+                        position: absolute;
+                        cursor: pointer;
+                        top: 5px;
+                        left: 5px;
+                        bottom: 5px;
+                        right: 5px;
+                        border-radius: 2px;
+                    }
+                }
+            }
+        }
+    }
+    .info-cost {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .slider-cost {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            background-color: rgba(#000, 0.15);
+            border-radius: 5px;
+            padding: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+            .slider-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 5px;
+                cursor: pointer;
+                font-size: 20px;
+            }
+            .slider-list {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: nowrap;
+                flex: 1 100%;
+                max-width: 500px;
+                margin: 0 auto;
+                .item-slider {
+                    width: 100px;
+                    padding: 2px;
+                    cursor: pointer;
+                    .item-slider-img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                    .item-slider-title {
+                        width: 100px;
+                        max-width: 100px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        font-size: 16px;
+                        font-weight: normal;
+                        color: #9798ae;
+                        margin-top: -5px;
+                    }
+                }
+            }
+        }
+        .apply-cost {
+            width: 100%;
+            .inner-apply {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            &.view-scroll {
+                position: relative;
+                overflow: hidden;
+                height: calc(100vh - 400px);
+                max-height: 100%;
+                overflow-y: scroll;
+            }
+            // @media (min-height: 1024px) {
+            //     &.view-scroll {
+            //         // height: 50vh;
+            //         height: calc(100vh - 400px);
+            //     }
+            // }
+            @media (min-width: 1600px) {
+                &.view-scroll {
+                    // height: 72vh;
+                    height: calc(100vh - 440px);
+                }
+            }
+        }
+        .icon-cost {
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-image: url('https://cdn.pegaxy.io/statics/play/public/v9/images/lootbox/holder_item.png');
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+        }
+        .id-cost {
+            text-align: center;
+            font-size: 20px;
+            font-weight: normal;
+            color: #9798ae;
+            margin-bottom: 2px;
+        }
+        .title-cost {
+            text-align: center;
+            font-size: 20px;
+            font-weight: normal;
+            p {
+                text-align: center;
+                font-size: 20px;
+                font-weight: normal;
+                margin: 0;
+            }
+        }
+        .adj-cost {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            input {
+                background-color: rgba(#000, 0.25)!important;
+                border-radius: 3px;
+                border-width: 0;
+                text-align: center;
+                min-height: 30px;
+                height: 30px;
+            }
+            .item {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                min-height: 30px;
+                min-width: 48px;
+                background-color: #3186b2;
+                padding: 0 10px;
+                margin: 0 2px;
+                border-radius: 3px;
+            }
+        }
+        .status-cost {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 10px;
+            margin: 20px 0;
+            background: rgb(0, 0, 0);
+            min-width: 320px;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4766500350140056) 50%, rgba(0, 0, 0, 0) 100%);
+            .item-cost {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                padding: 0 20px;
+                font-size: 20px;
+                font-weight: 300;
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
+                span {
+                    margin: 0 5px;
+                }
+                i {
+                    font-size: 12px;
+                    position: relative;
+                    top: -2px;
+                }
+            }
+            .item-title {
+                padding: 0 20px;
+                font-size: 20px;
+                font-weight: 300;
+            }
+        }
+        .value-cost {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 2px 10px;
+            margin: 10px 0;
+            background: rgb(0, 0, 0);
+            min-width: 320px;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4766500350140056) 50%, rgba(0, 0, 0, 0) 100%);
+            .item-cost {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                padding: 0 20px;
+                font-size: 20px;
+                font-weight: 300;
+                span {
+                    margin-left: 10px;
+                }
+            }
+            .item-title {
+                padding: 0 20px;
+                font-size: 20px;
+                font-weight: 300;
+            }
+        }
+    }
+}
